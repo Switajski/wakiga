@@ -11,10 +11,10 @@ const IndexPage = () => (
     <h1>Besuchen Sie uns im Wald - bald ...</h1>
     <p>Tag der offenen Tür im Waldkindergarten Wiesenttal verschoben</p>
     <p>Leider müssen wir aufgrund der aktuellen Lage unseren Tag der offenen Tür verschieben.</p>
+    <p>asdfasd</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
-    <Link to="/konzept/">Konzept</Link>
   </Layout>
 )
 

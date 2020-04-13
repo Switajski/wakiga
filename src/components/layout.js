@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Footer from "./footer"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -35,16 +36,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
-          <div>
-            {data.site.siteMetadata.address.split("\n").map(text => (
-              <>
-                {text}
-                <br />
-              </>
-            ))}
-          </div>
-        </footer>
+        <Footer address={data.site.siteMetadata.address} />
       </div>
     </>
   )

@@ -1,0 +1,17 @@
+header {
+  background: #004225;
+  margin-bottom: 1.45rem;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+header a:hover {
+  color: yellow;
+}
+
+header div:not(:first-child) {
+  margin-left:5px;
+}

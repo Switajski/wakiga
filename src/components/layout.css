@@ -512,6 +512,7 @@ th {
 }
 li {
   margin-bottom: calc(1.45rem / 2);
+  list-style-type: none;
 }
 ol li {
   padding-left: 0;

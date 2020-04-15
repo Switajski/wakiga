@@ -35,7 +35,6 @@ const Layout = ({ children }) => {
           { url: "/termine/", name: "Termine" },
           { url: "/presse/", name: "Presse" },
           { url: "/downloads/", name: "Downloads" },
-          { url: "/links/", name: "Links" },
         ]}
       />
       <div

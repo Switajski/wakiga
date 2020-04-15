@@ -17,9 +17,12 @@ header div:not(:first-child) {
 }
 
 header svg {
+  fill: white;
+}
+
+header svg.icon {
   width: 40px;
   height: 40px;
-  fill: white;
 }
 
 header svg:hover {

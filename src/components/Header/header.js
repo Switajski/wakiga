@@ -26,17 +26,8 @@ const Header = ({ links = [] }) => {
 
   return (
     <header>
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0.8rem 1.0875rem`,
-          display: "flex",
-          flexWrap: "wrap",
-          alignItems: "center",
-        }}
-      >
-        <div style={{ marginRight: "auto" }}>
+      <div class='bar'>
+        <div>
           <h1 style={{ margin: 0 }}>
             <Link to="/">
               {big ? (

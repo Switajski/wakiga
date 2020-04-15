@@ -16,6 +16,28 @@ header div:not(:first-child) {
   margin-left:5px;
 }
 
+header ul {
+  margin-bottom: 0;
+}
+header a:last-child li {
+  margin-bottom: 0;
+}
+
+
+header div.bar {
+  margin: 0 auto;
+  max-width: 60;
+  padding: 0.8rem 1.0875rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header div.bar div:not(:first-child) {
+  margin-left: auto;
+}
+
 header svg {
   fill: white;
 }

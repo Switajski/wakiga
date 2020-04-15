@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/wakiga',
   siteMetadata: {
     title: `Waldkindergarten Wiesenttal`,
     description: `Sommer wie Winter - lernen und (er)leben in der Natur`,

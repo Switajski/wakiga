@@ -17,8 +17,9 @@ const Bilder = () => {
         node {
           base
           childImageSharp {
-            fluid {
+            fluid (maxWidth: 800, quality: 100) {
               ...GatsbyImageSharpFluid
+              presentationWidth
             }
           }
         } 
@@ -31,6 +32,7 @@ const Bilder = () => {
     <Layout>
     {data.allFile.edges.map(image => (
       <Img
+        style={{maxWidth: image.node.childImageSharp.fluid.presentationWidth, margin: "0 auto" }}
         fluid={image.node.childImageSharp.fluid}
         alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
       />

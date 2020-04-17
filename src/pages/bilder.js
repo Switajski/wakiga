@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import Layout from '../components/layout'
 
 const Bilder = () => {
-  const data = useStaticQuery(graphql`
+    const data = useStaticQuery(graphql`
     query {
     allFile(
       filter: {
@@ -28,16 +28,24 @@ const Bilder = () => {
   }
   `)
 
-  return (
-    <Layout>
-    {data.allFile.edges.map(image => (
-      <Img
-        style={{maxWidth: image.node.childImageSharp.fluid.presentationWidth, margin: "0 auto" }}
-        fluid={image.node.childImageSharp.fluid}
-        alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
-      />
-    ))}
-  </Layout>
-)}
+    return (
+        <Layout>
+            {data.allFile.edges.map(image => (
+                <div>
+                    <Img
+                        style={
+                            {
+                                maxWidth: image.node.childImageSharp.fluid.presentationWidth,
+                                margin: "0 auto" // center image
+                            }}
+                        fluid={image.node.childImageSharp.fluid}
+                        alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
+                    />
+                    <br />
+                </div>
+            ))}
+        </Layout>
+    )
+}
 
 export default Bilder

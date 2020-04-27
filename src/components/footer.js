@@ -10,11 +10,13 @@ const Footer = ({ address }) => {
   return (
     <footer>
       <div style={{ display: "flex" }}>
-        <div style={{ marginRight: "auto" }}>
-          <img src={logo} />
+        <div style={{ marginRight: "10px" }}>
+          <img src={logo} alt="Waldkindergarten Wiesenttal e.V."/>
         </div>
-        <div>
+        <div style={{ marginRight: "10px" }}>
           <TextBreaker>{address}</TextBreaker>
+          <br />
+          <a href="http://www.waldkindergarten-wiesenttal.de">Verein</a>
           <br />
           <Link to="/impressum/">Impressum</Link>
           <br />
@@ -22,10 +24,15 @@ const Footer = ({ address }) => {
         </div>
         <div>
           <TextBreaker>
-            {`"Waldhandy": 0160 - 625 06 40 
+            {`Anmeldungen und Fragen an:
+              Philipp Schwegel (Elterninitiative)
+              eMail: philipp.schwegel@googlemail.com
+              Telefon: 0179/3286326
+
+              "Waldhandy": TBD 
               MO - FR 8 - 14:30 Uhr
 
-              Telefon Büro: 09196 - 99 84 66
+              Telefon Büro Verein: 09196 - 99 84 66
               Fax: 09196 - 99 84 59 
               DI & DO 8 - 12 Uhr`}
           </TextBreaker>

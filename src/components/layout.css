@@ -202,6 +202,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
+  background-color: rgb(162, 203, 206);
   font-family: 'Roboto', serif;
   font-weight: normal;
   word-wrap: break-word;

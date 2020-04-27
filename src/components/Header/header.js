@@ -31,9 +31,9 @@ const Header = ({ links = [] }) => {
           <h1 style={{ margin: 0 }}>
             <Link to="/">
               {big ? (
-                "Waldkindergarten Wiesenttal"
+                "Waldkindergarten Plankenfels"
               ) : (
-                <AdjustedWidth relative="Waldkindergarten" anchor="Wiesenttal" />
+                <AdjustedWidth relative="Waldkindergarten" anchor="Plankenfels" />
               )}
             </Link>
           </h1>

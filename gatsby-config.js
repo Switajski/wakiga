@@ -1,14 +1,23 @@
 module.exports = {
   pathPrefix: '/wakiga',
   siteMetadata: {
-    title: `Waldkindergarten Wiesenttal`,
+    title: `Waldkindergarten Plankenfels`,
+    siteUrl: `http://www.waldkindergarten-wiesenttal.de`,
     description: `Sommer wie Winter - lernen und (er)leben in der Natur`,
-    author: `Michael Werner & Marek Switajski`,
+    author: `Marek Switajski & Michael Werner`,
     address: `Waldkindergarten Wiesenttal e.V.
     Schauertal 25
     91346 Wiesenttal/Streitberg`,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data`
+      }
+    },
+    `gatsby-transformer-ms-word`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

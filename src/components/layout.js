@@ -30,10 +30,11 @@ const Layout = ({ children }) => {
       <Header
         siteTitle={data.site.siteMetadata.title}
         links={[
-          { url: "/konzept/", name: "Konzept" },
-          { url: "/bilder/", name: "Bilder" },
           { url: "/termine/", name: "Termine" },
-          { url: "/presse/", name: "Presse" },
+          { url: "/konzept/", name: "Konzept" },
+          { url: "/standort/", name: "Standort" },
+          { url: "/bilder/", name: "Bilder" },
+          { url: "/verein/", name: "Hintergrund" },
           { url: "/downloads/", name: "Downloads" },
         ]}
       />
@@ -41,7 +42,6 @@ const Layout = ({ children }) => {
         style={{
           margin: `0 auto`,
           maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
         }}
       >
         <main>{children}</main>

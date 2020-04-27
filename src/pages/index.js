@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -8,11 +7,12 @@ import SEO from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Besuchen Sie uns im Wald - bald ...</h1>
-    <p>Tag der offenen Tür im Waldkindergarten Wiesenttal verschoben</p>
-    <p>Leider müssen wir aufgrund der aktuellen Lage unseren Tag der offenen Tür verschieben.</p>
-    <p>asdfasd</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+    <h1>Herzlich willkommen</h1>
+    <p>Aufgrund der aktuellen gesetzlichen Bestimmungen (Sars-CoV-2 Pandemie),
+      müssen wir den Tag der offenen Tür leider verschieben.
+    </p>
+    <p>Wir hoffen, dass wir unseren nagelneuen Waldkindergarten in Plankenfels (Scherleithen) wie geplant am 04.05.2020 für Eure Liebsten eröffnen können.</p>
+    <div style={{ maxWidth: `900px`, marginBottom: `10px` }}>
       <Image />
     </div>
   </Layout>

@@ -44,6 +44,7 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  color: inherit;
 }
 a:active,
 a:hover {
@@ -201,9 +202,9 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
-  background-color: rgb(162, 203, 206);
-  font-family: 'Roboto', serif;
+  color: white;
+  background-color: black;
+  font-family: 'Grotesque', Georgia, cursive;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -456,16 +457,6 @@ form {
   margin-bottom: 1.45rem;
 }
 noscript {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-}
-iframe {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;

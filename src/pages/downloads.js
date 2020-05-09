@@ -7,9 +7,8 @@ import SEO from "../components/seo"
 const Downloads = () => (
   <Layout>
     <SEO title="Downloads" />
-    <h1>Downloads</h1>
-    <p>TBD</p>
-    <Link to="/">zurueck zum Anfang</Link>
+    <h3>Downloads</h3>
+    <a href="http://www.waldkindergarten-wiesenttal.de/downloads.php">HIER ENTLANG</a>
   </Layout>
 )
 

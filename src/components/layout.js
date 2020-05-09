@@ -30,8 +30,7 @@ const Layout = ({ children }) => {
       <Header
         siteTitle={data.site.siteMetadata.title}
         links={[
-          { url: "/termine/", name: "Termine" },
-          { url: "/konzept/", name: "Konzept" },
+          { url: "/aktuelles/", name: "Aktuelles" },
           { url: "/standort/", name: "Standort" },
           { url: "/bilder/", name: "Bilder" },
           { url: "/verein/", name: "Hintergrund" },
@@ -45,7 +44,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <Footer address={data.site.siteMetadata.address} />
+          <Footer address={data.site.siteMetadata.address} />
       </div>
     </>
   )

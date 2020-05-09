@@ -13,9 +13,9 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `data`,
-        path: `${__dirname}/src/data`
-      }
+        name: `docx`,
+        path: `${__dirname}/src/content/docx`,
+      },
     },
     `gatsby-transformer-ms-word`,
     `gatsby-plugin-react-helmet`,

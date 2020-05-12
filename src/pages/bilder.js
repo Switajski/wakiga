@@ -66,7 +66,8 @@ const Bilder = () => {
                     <br />
                 </div>
             ))}
-            <h3>Impressionen aus Streitberg</h3>
+            <br></br><br></br>
+            <h3>Noch ein paar Bilder aus Streitberg</h3>
             {data.streitberg.edges.map(image => (
                 <div>
                     <Img

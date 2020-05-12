@@ -13,8 +13,8 @@ const AdjustedWidth = ({ relative, anchor }) => (
         {relative}
       </text>
     </svg>
-    {anchor}
-  </div>
+        {anchor}
+     </div>
 )
 
 const Header = ({ links = [] }) => {

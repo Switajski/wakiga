@@ -3,25 +3,31 @@ import PropTypes from "prop-types"
 
 import TextBreaker from "./text-breaker"
 import logo from "../images/logo.gif"
-import { Link } from "gatsby"
+import { Link, useStaticQuery,  } from "gatsby"
+import Icon from "../images/FindUs-FB-RGB.svg"
 
+/* borderWidth: "medium", borderStyle: "outset", borderColor: "white", */
 const Footer = ({ address }) => {
   return (
-    <footer style={{ margin: "1rem auto", borderWidth: "medium", borderStyle: "outset", borderColor: "white", verticalAlign: "center"}}>
-      <div style={{ display: "flex", fontSize: "80%", lineHeight: "110%", marginTop: "2em", padding: "0.5rem", verticalAlign: "center" }}>
-        <div style={{ width: "100%", textAlign: "center" }}>
+    <footer style={{ margin: "2rem auto",  backgroundColor: "#004225" }}>
+      <div style={{ display: "flex", fontSize: "80%", lineHeight: "110%", padding: "0.5rem" }}>
+        <div style={{ width: "100%", textAlign: "center", marginTop: "2.8em" }}>
           <TextBreaker>{address}</TextBreaker>
-          <br />
+          <br></br>
           <Link to="/impressum/">Impressum</Link>
-          <br />
+          <br></br>
           <Link to="/datenschutz/">Datenschutz</Link>
+          <br></br><br></br>
+          <a href="https://www.facebook.com/waldkiga.plankenfels/" title="Find us on Facebook">
+            <Icon style={{width: "7rem"}} />
+          </a>
         </div>
-        <div style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <div style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", marginTop: "2.0em" }}>
         <a href="http://www.waldkindergarten-wiesenttal.de" title="Zum Verein">
           <img src={logo} alt="Waldkindergarten Wiesenttal e.V." />
         </a>
         </div>
-        <div style={{ width: "100%", textAlign: "center" }}>
+        <div style={{ width: "100%", textAlign: "center", marginTop: "2.8em" }}>
           <TextBreaker>
             {`"Waldhandy": TBD 
               MO - FR 8 - 14:30 Uhr

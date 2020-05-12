@@ -30,7 +30,7 @@ const NavMobile = ({ links }) => {
         <ul>
           {links.map(link => (
             <Link to={link.url}>
-              <li style={{ padding: "0.5em 0", fontSize: "1.3em" }}>
+              <li style={{ padding: "0.5em 0", fontSize: "1.3em", marginTop: "0.3em", textAlign: "center", backgroundColor: "black", width: "110%" }}>
                 {link.name}
               </li>
             </Link>

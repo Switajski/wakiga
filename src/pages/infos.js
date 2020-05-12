@@ -31,7 +31,6 @@ const Verein = () => {
     return (
         <Layout>
             <SEO title="Verein" />
-            <h3>Die Betreuer in Plankenfels</h3>
             <div dangerouslySetInnerHTML={createMarkup(data.personal.content)}></div>
             <Img
                 style={{ maxWidth: 320, margin: "0 auto" }} // center image

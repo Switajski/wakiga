@@ -10,6 +10,7 @@ module.exports = {
     91346 Wiesenttal/Streitberg`,
   },
   plugins: [
+    
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -17,15 +18,19 @@ module.exports = {
         path: `${__dirname}/src/content/docx`,
       },
     },
-    `gatsby-transformer-ms-word`,
-    `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-transformer-ms-word`,
+      options: {
+        name: `msword`,
+      },
+    },    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -40,6 +45,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    'gatsby-plugin-react-svg',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

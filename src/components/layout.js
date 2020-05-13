@@ -30,10 +30,12 @@ const Layout = ({ children }) => {
       <Header
         siteTitle={data.site.siteMetadata.title}
         links={[
-          { url: "/anfahrt/", name: "Anfahrt" },
-          { url: "/infos/", name: "Infos" },
-          { url: "/bilder/", name: "Bilder" },
+          { url: "/anfahrt/", name: "Kontakt & Anfahrt" },
+          { url: "/termine/", name: "Termine" },
+          { url: "/zeiten/", name: "Zeiten & Gebühren" },
           { url: "/downloads/", name: "Downloads" },
+          { url: "/bilder/", name: "Bilder" },
+          { url: "/ueberuns/", name: "Über uns" },
         ]}
       />
       <div

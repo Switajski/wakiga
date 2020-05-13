@@ -202,7 +202,7 @@ html {
 }
 body {
   color: white;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.719);
   font-family: 'Jost', sans-serif;
   font-weight: normal;
   word-wrap: break-word;

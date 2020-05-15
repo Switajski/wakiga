@@ -32,10 +32,10 @@ const Layout = ({ children }) => {
         links={[
           { url: "/anfahrt/", name: "Kontakt & Anfahrt" },
           { url: "/termine/", name: "Termine" },
-          { url: "/zeiten/", name: "Zeiten & Gebühren" },
+          { url: "/zeiten/", name: "Zeiten & Beiträge" },
+          { url: "/ueberuns/", name: "Über uns" },
           { url: "/downloads/", name: "Downloads" },
           { url: "/bilder/", name: "Bilder" },
-          { url: "/ueberuns/", name: "Über uns" },
         ]}
       />
       <div

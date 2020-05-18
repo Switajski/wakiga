@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 
 const Burger = props => (
-  <svg {...props} class='icon' viewBox="0 0 24 24">
+  <svg {...props} className='icon' viewBox="0 0 24 24">
     <rect y="2" width="24" height="2" rx="1"></rect>
     <rect y="20" width="24" height="2" rx="1"></rect>
     <rect y="8" width="24" height="2" rx="1"></rect>
@@ -30,7 +30,7 @@ const NavMobile = ({ links }) => {
         <ul>
           {links.map(link => (
             <Link to={link.url}>
-              <li style={{ padding: "0.5em 0", fontSize: "1.3em", marginTop: "0.3em", textAlign: "center", backgroundColor: "black", width: "110%" }}>
+              <li style={{ padding: "0.5em 0", fontSize: "1.3em", marginTop: "0.3em", textAlign: "center", backgroundColor: "white", width: "110%" }}>
                 {link.name}
               </li>
             </Link>

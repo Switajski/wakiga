@@ -1,15 +1,15 @@
 header {
-  background: #004225;
+  background: RGB(197, 224, 180);
   margin-bottom: 1.45rem;
 }
 
 header a {
-  color: white;
+  color: RGB(60, 93, 38);
   text-decoration: none;
 }
 
 header a:hover {
-  color: white;
+  color: RGB(60, 93, 38);
 }
 
 header div:not(:first-child) {
@@ -39,7 +39,7 @@ header div.bar div:not(:first-child) {
 }
 
 header svg {
-  fill: white;
+  fill: RGB(60, 93, 38);
 }
 
 header svg.icon {
@@ -48,5 +48,5 @@ header svg.icon {
 }
 
 header svg:hover {
-  fill: white;
+  fill: RGB(60, 93, 38);
 }

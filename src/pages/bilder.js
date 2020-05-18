@@ -53,7 +53,7 @@ const Bilder = () => {
             <SEO title="Bilder" />
             <h3>Unsere Plankenfelser Wuselwiese</h3>
             {data.plankenfels.edges.map(image => (
-                <div>
+                <div key={image.node.base}>
                     <Img
                         style={
                             {
@@ -69,7 +69,7 @@ const Bilder = () => {
             <br></br><br></br>
             <h3>Noch ein paar Bilder aus Streitberg</h3>
             {data.streitberg.edges.map(image => (
-                <div>
+                <div key={image.node.base}>
                     <Img
                         style={
                             {

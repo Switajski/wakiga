@@ -11,10 +11,11 @@ function createMarkup(htmlString) {
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
   query {
-    placeholderImage: file(relativePath: { eq: "Platz.jpg" }) {
+    placeholderImage: file(relativePath: { eq: "tippi.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 960) {
+        fluid(maxWidth: 900) {
           ...GatsbyImageSharpFluid
+          presentationWidth
         }
       }
     }
@@ -29,9 +30,9 @@ return(
     <SEO title="Home" />
     <div dangerouslySetInnerHTML={createMarkup(data.index.content)}></div>
     <div style={{ marginBottom: `10px` }}>
-      <Img style={{ margin: "0 auto" }}
+      <Img style={{ margin: "0 auto", maxWidth: data.placeholderImage.childImageSharp.fluid.presentationWidth}}
            fluid={data.placeholderImage.childImageSharp.fluid}/>
-           <p style={{ textAlign: "center" }}>Plankenfelser Wuselwiese</p>
+           <p style={{ textAlign: "center" }}>Das Tippi steht</p>
     </div>
   </Layout>
 )}

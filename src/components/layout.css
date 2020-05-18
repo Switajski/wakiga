@@ -201,8 +201,8 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.719);
+  color: rgb(87, 87, 87);
+  background-color: white;
   font-family: 'Jost', sans-serif;
   font-weight: normal;
   word-wrap: break-word;
@@ -558,7 +558,6 @@ thead {
 td,
 th {
   text-align: left;
-  border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
   font-feature-settings: "tnum";
   -moz-font-feature-settings: "tnum";
   -ms-font-feature-settings: "tnum";
@@ -566,7 +565,7 @@ th {
   padding-left: 0.96667rem;
   padding-right: 0.96667rem;
   padding-top: 0.725rem;
-  padding-bottom: calc(0.725rem - 1px);
+  padding-bottom: 0.725rem;
 }
 th:first-child,
 td:first-child {
@@ -609,6 +608,15 @@ pre tt:after {
   }
 }
 
-footer > div > div:not(:first-child) {
-  margin-left: 10px;
+.topnav a:hover {
+  border-bottom: 3px solid white;
+}
+
+table > tbody > tr > td > p {
+  margin-bottom: 0px;
+}
+
+tr {
+  border: 0px;
+  border-bottom: 0px;
 }

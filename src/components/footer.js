@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 
 import TextBreaker from "./text-breaker"
 import logo from "../images/logo.gif"
@@ -10,9 +9,9 @@ import EmailIcon from "../images/Email-Icon.png"
 /* borderWidth: "medium", borderStyle: "outset", borderColor: "white", */
 const Footer = ({ address }) => {
   return (
-    <footer style={{ margin: "2rem auto",  backgroundColor: "#004225" }}>
-      <div style={{ display: "flex", fontSize: "80%", lineHeight: "110%", padding: "0.5rem" }}>
-        <div style={{ width: "100%", textAlign: "center", marginTop: "2.8em" }}>
+    <footer style={{ margin: "2rem auto",  backgroundColor: "RGB(197, 224, 180)", height: "auto" }}>
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", fontSize: "80%", lineHeight: "115%", padding: "1rem" }}>
+        <div style={{ width: "100%", textAlign: "center" }}>
           <div>
             <TextBreaker>{address}</TextBreaker>
           </div>
@@ -28,12 +27,12 @@ const Footer = ({ address }) => {
             </a>
           </div>          
         </div>
-        <div style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", marginTop: "2.0em" }}>
+        <div style={{ margin: "0 auto", width: "100%", display: "flex", justifyContent: "center", alignItems: "center", verticalAlign: "middle" }}>
           <a href="http://www.waldkindergarten-wiesenttal.de" title="Zum Verein">
-            <img src={logo} alt="Waldkindergarten Wiesenttal e.V." />
+            <img src={logo} alt="Waldkindergarten Wiesenttal e.V." style={{ marginBottom: "0" }}/>
           </a>
         </div>
-        <div style={{ width: "100%", textAlign: "center", marginTop: "2.8em" }}>
+        <div style={{ width: "100%", textAlign: "center" }}>
           <TextBreaker>
             {`"Waldhandy": TBD 
               MO - FR 8 - 14:30 Uhr`}
@@ -52,10 +51,6 @@ const Footer = ({ address }) => {
       </div>
     </footer>
   )
-}
-
-Footer.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Footer

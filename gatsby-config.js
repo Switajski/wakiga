@@ -10,7 +10,6 @@ module.exports = {
     91346 Wiesenttal/Streitberg`,
   },
   plugins: [
-    
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -18,12 +17,8 @@ module.exports = {
         path: `${__dirname}/src/content/docx`,
       },
     },
+    `gatsby-transformer-ms-word`,
     {
-      resolve: `gatsby-transformer-ms-word`,
-      options: {
-        name: `msword`,
-      },
-    },    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

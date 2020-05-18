@@ -1,10 +1,10 @@
 import { Link } from "gatsby"
 import React from "react"
 
-import "./header.css"
 import useWindowSize from "./use-window-size"
 import NavDesktop from "./nav-desktop"
 import NavMobile from "./nav-mobile"
+import "./header.css"
 
 const AdjustedWidth = ({ relative, anchor }) => (
   <div>
@@ -26,7 +26,7 @@ const Header = ({ links = [] }) => {
 
   return (
     <header>
-      <div class='bar'>
+      <div className='bar'>
         <div>
           <h1 style={{ margin: 0 }}>
             <Link to="/">

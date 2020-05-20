@@ -41,6 +41,14 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-svg',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `docx`,
+        path: `${__dirname}/src/content/download`,
+      },
+    },
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

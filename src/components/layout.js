@@ -38,14 +38,9 @@ const Layout = ({ children }) => {
           { url: "/bilder/", name: "Bilder", key: "6" },
         ]}
       />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-        }}
-      >
-        <main>{children}</main>
-          <Footer address={data.site.siteMetadata.address} />
+      <div style={{ margin: `0 auto`, maxWidth: 960 }}>
+        <main style={{paddingLeft: "0.3rem", paddingRight: "0.3rem"}}>{children}</main>
+        <Footer address={data.site.siteMetadata.address} />
       </div>
     </>
   )

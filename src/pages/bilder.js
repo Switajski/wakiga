@@ -8,10 +8,10 @@ import Layout from '../components/layout'
 const Bilder = () => {
     const data = useStaticQuery(graphql`
     query {
-    plankenfels: allFile(
+    juni: allFile(
       filter: {
         extension: { regex: "/(jpg)|(png)|(jpeg)/" }
-        relativeDirectory: { eq: "plankenfels_leer" }
+        relativeDirectory: { eq: "juni" }
       }
     ) {
       edges {
@@ -26,63 +26,27 @@ const Bilder = () => {
         } 
       }
     }
-    streitberg: allFile(
-      filter: {
-        extension: { regex: "/(jpg)|(png)|(jpeg)/" }
-        relativeDirectory: { eq: "streitberg" }
-      }
-    ) {
-      edges {
-        node {
-          base
-          childImageSharp {
-            fluid (maxWidth: 800, quality: 100) {
-              ...GatsbyImageSharpFluid
-              presentationWidth
-            }
-          }
-        } 
-      }
-    }
-
   }
   `)
 
     return (
         <Layout>
-            <SEO title="Bilder" />
-            <h3>Unsere Plankenfelser Wuselwiese</h3>
-            {data.plankenfels.edges.map(image => (
-                <div key={image.node.base}>
-                    <Img
-                        style={
-                            {
-                                maxWidth: image.node.childImageSharp.fluid.presentationWidth,
-                                margin: "0 auto" // center image
-                            }}
-                        fluid={image.node.childImageSharp.fluid}
-                        alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
-                    />
-                    <br />
-                </div>
-            ))}
-            <br></br><br></br>
-            <h3>Noch ein paar Bilder aus Streitberg</h3>
-            {data.streitberg.edges.map(image => (
-                <div key={image.node.base}>
-                    <Img
-                        style={
-                            {
-                                maxWidth: image.node.childImageSharp.fluid.presentationWidth,
-                                margin: "0 auto" // center image
-                            }}
-                        fluid={image.node.childImageSharp.fluid}
-                        alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
-                    />
-                    <br />
-                </div>
-            ))}
-
+          <SEO title="Bilder" />
+          <h3>Unsere Plankenfelser Wuselwiese</h3>
+          {data.juni.edges.map(image => (
+              <div key={image.node.base}>
+                  <Img
+                      style={
+                          {
+                              maxWidth: image.node.childImageSharp.fluid.presentationWidth,
+                              margin: "0 auto" // center image
+                          }}
+                      fluid={image.node.childImageSharp.fluid}
+                      alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
+                  />
+                  <br />
+              </div>
+          ))}
         </Layout>
     )
 }

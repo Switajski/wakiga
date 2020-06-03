@@ -19,6 +19,8 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            siteUrl
+            facebookUsername
           }
         }
       }
@@ -26,6 +28,7 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const defaultUrl = site.siteMetadata.siteUrl
 
   return (
     <Helmet
@@ -50,6 +53,10 @@ function SEO({ description, lang, meta, title }) {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:url`,
+          content: defaultUrl,
         },
         {
           name: `twitter:card`,

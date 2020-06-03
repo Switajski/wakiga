@@ -2,12 +2,13 @@ module.exports = {
   pathPrefix: '/wakiga',
   siteMetadata: {
     title: `Waldkindergarten Plankenfels`,
-    siteUrl: `https://www.waldkindergarten-plankenfels.de`,
+    siteUrl: "https://www.waldkindergarten-plankenfels.de",
     description: `Sommer wie Winter - lernen und (er)leben in der Natur`,
     author: `Marek Switajski & Michael Werner`,
     address: `Waldkindergarten Wiesenttal e.V.
     Schauertal 25
     91346 Wiesenttal/Streitberg`,
+    facebookUsername: "waldkiga.plankenfels",
   },
   plugins: [
     {

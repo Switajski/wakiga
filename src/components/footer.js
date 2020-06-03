@@ -17,9 +17,8 @@ const Footer = ({ address }) => {
           </div>
           <div style={{ marginTop: "1.45em" }}>
             <TextBreaker>
-              {`Telefon Büro Verein: 09196 - 99 84 66
-              Fax: 09196 - 99 84 59 
-              Di & Do 8 - 12 Uhr`}
+              {`Telefon Büro Verein: 09196 - 998466
+              Di & Do 08 - 12 Uhr`}
             </TextBreaker>
           </div>
           <div style={{ marginTop: "1.45em" }}>

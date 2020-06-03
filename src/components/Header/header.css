@@ -1,11 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
+
 header {
   background: RGB(197, 224, 180);
   margin-bottom: 1.45rem;
+  height: 25em;
 }
+
+header h1 {
+  font-family: 'Chelsea Market', cursive;
+  margin: 0;
+  border: 6px;
+  border-style: double;
+  border-color: white;
+  opacity: 0.5;
+  padding: 0.25em;
+}
+
+header h1 a {
+  color: white;
+}
+
 
 header a {
   color: RGB(60, 93, 38);
   text-decoration: none;
+  font-family: 'Chelsea Market', cursive;
 }
 
 header a:hover {
@@ -34,12 +53,20 @@ header div.bar {
   justify-content: space-between;
 }
 
+header div.navigation {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 header div.bar div:not(:first-child) {
   margin-left: auto;
 }
 
 header svg {
-  fill: RGB(60, 93, 38);
+  fill: white;
 }
 
 header svg.icon {
@@ -49,4 +76,8 @@ header svg.icon {
 
 header svg:hover {
   fill: RGB(60, 93, 38);
+}
+
+header BackgroundImage {
+  background-size: cover;
 }

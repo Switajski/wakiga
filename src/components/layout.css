@@ -335,7 +335,7 @@ ul {
   margin-right: 0;
   margin-top: 0;
   padding-bottom: 0;
-  padding-left: 0;
+  padding-left: 1.5em;
   padding-right: 0;
   padding-top: 0;
   list-style-position: outside;
@@ -496,6 +496,10 @@ dt {
 th {
   font-weight: bold;
 }
+li::before {
+  content: "* ";
+  vertical-align: middle;
+}
 li {
   margin-bottom: calc(1.45rem / 2);
   list-style-type: none;
@@ -609,10 +613,6 @@ pre tt:after {
   }
 }
 
-.topnav a:hover {
-  border-bottom: 3px solid white;
-}
-
 table > tbody > tr > td > p {
   margin-bottom: 0px;
 }
@@ -620,4 +620,28 @@ table > tbody > tr > td > p {
 tr {
   border: 0px;
   border-bottom: 0px;
+}
+
+nav > a:first-child p {
+  border-top: 2px;
+  border-left: 2px;
+  border-right: 2px;
+  border-bottom: 2px;
+  border-style: solid;
+}
+
+nav > a:last-child p {
+  border-top: 0px;
+  border-left: 2px;
+  border-right: 2px;
+  border-bottom: 2px;
+  border-style: solid;
+}
+
+nav > a:not(:first-child):not(:last-child) p {
+  border-top: 0px;
+  border-left: 2px;
+  border-right: 2px;
+  border-bottom: 2px;
+  border-style: solid;
 }

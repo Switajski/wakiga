@@ -35,7 +35,8 @@ const Layout = ({ children }) => {
           { url: "/zeiten/", name: "Zeiten & Beiträge", key: "3" },
           { url: "/ueberuns/", name: "Über uns", key: "4" },
           { url: "/downloads/", name: "Downloads", key: "5" },
-          { url: "/bilder/", name: "Bilder", key: "6" },
+          { url: "/faq/", name: "FAQ", key: "6" },
+          { url: "/bilder/", name: "Bilder", key: "7" },
         ]}
       />
       <div style={{ margin: `0 auto`, maxWidth: 960 }}>

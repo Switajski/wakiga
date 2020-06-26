@@ -2,10 +2,8 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { StyledDocx } from "../components/StyledComponents/styleddocx"
 
-function createMarkup(htmlString) {
-    return { __html: htmlString };
-}
 const Datenschutz = () => {
     const data = useStaticQuery(graphql`
       query { 
@@ -17,7 +15,7 @@ const Datenschutz = () => {
     return (
         <Layout>
             <SEO title="Datenschutz" />
-            <div dangerouslySetInnerHTML={createMarkup(data.datenschutz.content)}></div>
+            <StyledDocx htmlContent={data.datenschutz.content} />
         </Layout>
     )
 }

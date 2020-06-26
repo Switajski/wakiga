@@ -32,6 +32,27 @@ const NavElement = styled.p`
   text-align: center;
   background-color:  rgba(197, 224, 180, 1.0);
   margin-bottom: 0;
+ /* &:first-child { 
+    border-top: 2px;
+    border-left: 2px;
+    border-right: 2px;
+    border-bottom: 2px;
+    border-style: solid;
+  }
+  &:last-child {
+    border-top: 0px;
+    border-left: 2px;
+    border-right: 2px;
+    border-bottom: 2px;
+    border-style: solid;
+  }
+  &:not(:first-child):not(:last-child) {
+    border-top: 0px;
+    border-left: 2px;
+    border-right: 2px;
+    border-bottom: 2px;
+    border-style: solid;
+  }*/
 `
 const NavigationBar = styled.nav`
   margin-top: 7.5%;
@@ -46,6 +67,27 @@ const StyledLink = styled(Link)`
   color: RGB(60, 93, 38);
   text-decoration: none;
   font-family: 'Chelsea Market', cursive;
+  &:first-child > p { 
+    border-top: 2px;
+    border-left: 2px;
+    border-right: 2px;
+    border-bottom: 2px;
+    border-style: solid;
+  }
+  &:last-child > p {
+    border-top: 0px;
+    border-left: 2px;
+    border-right: 2px;
+    border-bottom: 2px;
+    border-style: solid;
+  }
+  &:not(:first-child):not(:last-child) > p {
+    border-top: 0px;
+    border-left: 2px;
+    border-right: 2px;
+    border-bottom: 2px;
+    border-style: solid;
+  }
 `
 const NavMobile = ({ links }) => {
   const [open, setOpen] = useState(false)

@@ -12,7 +12,7 @@ const Description = styled.td`
     padding: 1em;
     width: {props.width};
 `
-const Image = styled.td`
+const ImageForDescription = styled.td`
     padding-left: 1em;
     padding-right: 1em;
     padding-top: 1em;
@@ -24,13 +24,27 @@ const ImageWithDescriptionLeft = props => (
     <Container>
         <tbody>
             <tr>
-                <Description style={{ padding: "1em" }} width={props.descriptionWidth}>{props.description}</Description>
-                <Image style={{ padding: "1em", width: "auto" }}>
+                <Description width={props.descriptionWidth}>{props.description}</Description>
+                <ImageForDescription>
                     <Img fluid={props.fluid}/>
-                </Image>
+                </ImageForDescription>
             </tr>
         </tbody>
     </Container>
 )
 
-export { ImageWithDescriptionLeft }
+const TitledImage = styled(Img)`
+    max-width: 320px;
+    margin: 0 auto;
+`
+const CenteredTitle = styled.div`
+    text-align: center;
+`
+const ImageWithTitle = (props) => (
+    <>
+        <TitledImage fluid={props.fluid} alt={props.alt} />
+        <CenteredTitle><p>{props.text}</p></CenteredTitle>
+    </>
+)
+
+export { ImageWithDescriptionLeft, ImageWithTitle }

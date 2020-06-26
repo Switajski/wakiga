@@ -33,15 +33,14 @@ const HeadLine = styled.h1`
     border: 6px;
     border-style: double;
     border-color: white;
-    opacity: 0.7;
+    opacity: 0.75;
     padding: 0.25em;
-    &:hover { opacity: 0.85; }
+    &:hover { opacity: 0.95; }
 `
 const HomeLink = styled(Link)`
     color: white;
     text-decoration: none;
     font-family: 'Chelsea Market', cursive;
-
 `
 const BarContainer = styled.div`
     margin: 0 auto;
@@ -60,28 +59,19 @@ const NavigationContainer = styled.div`
     align-items: center;
     width: 100%;
 `
-const StyledSVG = styled.svg`
-  fill: white;
+const CenteredText = styled.div`
+    text-align: center;
 `
-
-const AdjustedWidth = ({ relative, anchor }) => (
-    <div>
-        {relative}
-        <StyledSVG viewBox="0 -30 338 40">
-            <text x="70" y="0">{anchor}</text>
-        </StyledSVG>
-    </div>
-)
 
 const HeadLinePackage = (props) => (
     <StyledBackgroundImage fluid={props.fluid}>
         <HeadLineContainer>
             <HeadLine>
-                <HomeLink to="/" activeStyle={{ opacity: "1.0" }}>
+                <HomeLink to="/">
                     {props.isBig ? (
                         "Waldkindergarten Plankenfels"
                     ) : (
-                        <AdjustedWidth relative="Waldkindergarten" anchor="Plankenfels" />
+                        <CenteredText>Waldkindergarten<br></br>Plankenfels</CenteredText>
                     )}
                 </HomeLink>
             </HeadLine>

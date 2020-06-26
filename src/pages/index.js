@@ -2,10 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
-function createMarkup(htmlString) {
-  return {__html: htmlString};
-}
+import { StyledDocx } from "../components/StyledComponents/styleddocx"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -19,7 +16,7 @@ const IndexPage = () => {
 return(
   <Layout>
     <SEO title="Waldkindergarten Plankenfels" />
-    <div dangerouslySetInnerHTML={createMarkup(data.index.content)} />
+    <StyledDocx htmlContent={data.index.content} />
   </Layout>
 )}
 

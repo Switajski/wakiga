@@ -12,6 +12,16 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./Header/header"
 import Footer from "./footer"
 import "./layout.css"
+import styled from "styled-components"
+
+const StyledMainContainer = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
+`
+const StyledMain = styled.main`
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -37,12 +47,11 @@ const Layout = ({ children }) => {
           { url: "/downloads/", name: "Downloads", key: "5" },
           { url: "/faq/", name: "FAQ", key: "6" },
           { url: "/bilder/", name: "Bilder", key: "7" },
-        ]}
-      />
-      <div style={{ margin: `0 auto`, maxWidth: 960 }}>
-        <main style={{paddingLeft: "0.3rem", paddingRight: "0.3rem"}}>{children}</main>
+        ]} />
+      <StyledMainContainer>
+        <StyledMain>{children}</StyledMain>
         <Footer address={data.site.siteMetadata.address} />
-      </div>
+      </StyledMainContainer>
     </>
   )
 }

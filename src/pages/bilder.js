@@ -2,9 +2,14 @@ import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
-
 import Layout from '../components/layout'
+import styled from "styled-components"
 
+const StyledImage = styled(Img)`
+  max-width: ${props => props.presentationWidth + "px"};
+  max-height: 600px;
+  margin: 0 auto;
+`
 const Bilder = () => {
     const data = useStaticQuery(graphql`
     query {
@@ -44,16 +49,8 @@ const Bilder = () => {
           <p>Die Werkbank bietet den Kindern eine Möglichkeit für kreativen Bastelspaß.</p>
           {data.juni.edges.map(image => (
               <div key={image.node.base}>
-                  <Img
-                      style={
-                          {
-                              maxWidth: image.node.childImageSharp.fluid.presentationWidth,
-                              maxHeight: "600px",
-                              margin: "0 auto" // center image
-                          }}
-                      fluid={image.node.childImageSharp.fluid}
-                      alt={image.node.base.split(".")[0]} // only use section of the file extension with the filename
-                  />
+                  <StyledImage presentationWidth={image.node.childImageSharp.fluid.presentationWidth} fluid={image.node.childImageSharp.fluid}
+                      alt={image.node.base.split(".")[0]} />
                   <br />
               </div>
           ))}

@@ -9,14 +9,14 @@ const Header = ({ links = [] }) => {
   query {
     bkgImage_big: file(relativePath: { eq: "MenuBackground_big.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1920, quality: 100) {
+        fluid(maxWidth: 1920, quality: 85) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     bkgImage_small: file(relativePath: { eq: "MenuBackground_small.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 900, quality: 100) {
+        fluid(maxWidth: 900, quality: 85) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

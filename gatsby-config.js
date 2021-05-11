@@ -28,6 +28,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -39,7 +40,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/WebIcon.png`, // This path is relative to the root of the site.
+        icon: `src/images/Waldkindergarten_Logo.png`, // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-react-svg',

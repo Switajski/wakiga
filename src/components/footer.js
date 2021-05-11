@@ -80,7 +80,7 @@ const LeftColumnPackage = (props) => (
 const RightColumnPackage = (props) => (
   <RightColumn>
     <TextBreaker>
-      {`"Waldhandy": TBD 
+      {`"Waldhandy": 0176-42087893 
         Mo - Fr 08 - 14.30 Uhr`}
     </TextBreaker>
     <MailIconContainer>

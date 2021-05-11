@@ -21,7 +21,9 @@ const StyledDocxDiv = styled.div`
 `
 
 const StyledDocx = (props) => (
-    <StyledDocxDiv dangerouslySetInnerHTML={createMarkup(props.htmlContent)} />
+    <div>
+        <StyledDocxDiv dangerouslySetInnerHTML={createMarkup(props.htmlContent)} />
+    </div>
 )
 
 export { StyledDocx }

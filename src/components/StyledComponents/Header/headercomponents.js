@@ -4,6 +4,7 @@ import BackgroundImage from "gatsby-background-image"
 import { Link } from "gatsby"
 import NavDesktop from "./nav-desktop"
 import NavMobile from "./nav-mobile"
+import { StaticImage } from "gatsby-plugin-image"
 
 const StyledHeader = styled.header`
     background: RGB(197, 224, 180);
@@ -27,20 +28,13 @@ const HeadLineContainer = styled.div`
     align-items: center;
     height: 100%;
 `
-const HeadLine = styled.h1`
-    font-family: 'Chelsea Market', cursive;
-    margin: 0;
-    border: 6px;
-    border-style: double;
-    border-color: white;
-    opacity: 0.75;
-    padding: 0.25em;
-    &:hover { opacity: 0.95; }
-`
 const HomeLink = styled(Link)`
     color: white;
     text-decoration: none;
     font-family: 'Chelsea Market', cursive;
+`
+const HomeImage = styled.div`
+    &:hover { transform: scale(1.1);
 `
 const BarContainer = styled.div`
     margin: 0 auto;
@@ -59,22 +53,15 @@ const NavigationContainer = styled.div`
     align-items: center;
     width: 100%;
 `
-const CenteredText = styled.div`
-    text-align: center;
-`
 
 const HeadLinePackage = (props) => (
     <StyledBackgroundImage fluid={props.fluid}>
         <HeadLineContainer>
-            <HeadLine>
-                <HomeLink to="/">
-                    {props.isBig ? (
-                        "Waldkindergarten Plankenfels"
-                    ) : (
-                        <CenteredText>Waldkindergarten<br></br>Plankenfels</CenteredText>
-                    )}
-                </HomeLink>
-            </HeadLine>
+            <HomeLink to="/">
+                <HomeImage>
+                    <StaticImage src="../../../images/Waldkindergarten_Logo.png" alt="Waldkindergarten Mäusewiese" placeholder="blurred" layout="fixed" width={437} height={350} />
+                </HomeImage>
+            </HomeLink>
         </HeadLineContainer>  
     </StyledBackgroundImage>
 )

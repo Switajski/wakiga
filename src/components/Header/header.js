@@ -1,41 +1,46 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import useWindowSize from "./use-window-size"
-import { StyledHeader, HeaderContainer, HeadLinePackage, BarPackage } from "../StyledComponents/Header/headercomponents"
+import { HeadLinePackage, BarPackage, StyledHeader } from "../StyledComponents/Header/headercomponents"
 import "../StyledComponents/Header/header.css"
+import { getImage } from "gatsby-plugin-image"
 
 const Header = ({ links = [] }) => {
   const data = useStaticQuery(graphql`
   query {
-    bkgImage_big: file(relativePath: { eq: "MenuBackground_big.jpg" }) {
+    desktopBackgroundImage: file(relativePath: { eq: "MenuBackground_big.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1920, quality: 85) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(
+          placeholder: BLURRED
+          formats: [AUTO, WEBP]
+          layout: FULL_WIDTH
+          quality: 85
+        )
       }
     }
-    bkgImage_small: file(relativePath: { eq: "MenuBackground_small.jpg" }) {
+    overlayLogo: file(relativePath: { eq: "Waldkindergarten_Logo.png" }) {
       childImageSharp {
-        fluid(maxWidth: 900, quality: 85) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(
+          placeholder: BLURRED
+          formats: [AUTO, WEBP]
+          layout: FULL_WIDTH
+          quality: 85
+        )
       }
     }
   }
 `)
 
 const { width } = useWindowSize()
-
-const small = width < 730
-const middle = width >= 730 && width < 900
 const big = width >= 900
+
+const bkgImage = getImage(data.desktopBackgroundImage)
+const overlayLogoImage = getImage(data.overlayLogo)
 
 return (
   <StyledHeader>
-    <HeaderContainer>
-      <HeadLinePackage fluid={big ? data.bkgImage_big.childImageSharp.fluid :  data.bkgImage_small.childImageSharp.fluid} isBig={big} />
-      <BarPackage isBig={big} isMiddle={middle} isSmall={small} links={links} />
-    </HeaderContainer>
+    <HeadLinePackage image={bkgImage} logo={overlayLogoImage} />
+    <BarPackage isBig={big} links={links} />
   </StyledHeader>
   )
 }

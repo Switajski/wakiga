@@ -1,23 +1,20 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { Seo } from "../components/seo"
 import { ImageWithTitle } from "../components/StyledComponents/imagewithdescription"
 import { StyledDocx } from "../components/StyledComponents/styleddocx"
 
 const UeberUns = () => {
     const data = useStaticQuery(graphql`
       query { 
-        Nina01_doc: docx(name: {eq: "Nina01"}) {
+        Sabine01_doc: docx(name: {eq: "Sabine"}) {
             content
         }
-        Nina02_doc: docx(name: {eq: "Nina02"}) {
+        Charlotte_doc: docx(name: {eq: "Charlotte"}) {
             content
         }
-        Kathi01_doc: docx(name: {eq: "Kathi01"}) {
-            content
-        }
-        Kathi02_doc: docx(name: {eq: "Kathi02"}) {
+        Emily_doc: docx(name: {eq: "Emily"}) {
             content
         }
         Annalena01_doc: docx(name: {eq: "Annalena01"}) {
@@ -29,70 +26,81 @@ const UeberUns = () => {
         ueberunsdoc: docx(name: {eq: "UeberUns"}) {
             content
         }
-        img_nina: file(name: {eq: "nina01"}, relativeDirectory: {eq: "personal"}, extension: {eq: "jpg"}) {
+        Gitti_doc: docx(name: {eq: "Gitti"}) {
+            content
+        }
+        img_sabine: file(name: {eq: "Sabine"}, relativeDirectory: {eq: "personal"}, extension: {eq: "jpg"}) {
             base
             childImageSharp {
-                fluid (maxWidth: 800, quality: 100) {
-                    ...GatsbyImageSharpFluid }       
+                gatsbyImageData(
+                    width: 320
+                    layout: CONSTRAINED
+                    quality: 85)  
             }
         }
-        img_kathi: file(name: {eq: "kathi01"}, relativeDirectory: {eq: "personal"}, extension: {eq: "jpg"}) {
+        img_charlotte: file(name: {eq: "Charlotte"}, relativeDirectory: {eq: "personal"}, extension: {eq: "jpg"}) {
             base
             childImageSharp {
-                fluid (maxWidth: 800, quality: 100) {
-                    ...GatsbyImageSharpFluid }       
+                gatsbyImageData(
+                    width: 320
+                    layout: CONSTRAINED
+                    quality: 85)  
+            }
+        }
+        img_emily: file(name: {eq: "Emily"}, relativeDirectory: {eq: "personal"}, extension: {eq: "jpg"}) {
+            base
+            childImageSharp {
+                gatsbyImageData(
+                    width: 320
+                    layout: CONSTRAINED
+                    quality: 85)  
             }
         }
         img_annalena: file(name: {eq: "AnnaLena"}, relativeDirectory: {eq: "personal"}, extension: {eq: "jpg"}) {
             base
             childImageSharp {
-                fluid (maxWidth: 800, quality: 100) {
-                    ...GatsbyImageSharpFluid }       
+                gatsbyImageData(
+                    width: 320
+                    layout: CONSTRAINED
+                    quality: 85)      
+            }
+        }
+        img_gitti: file(name: {eq: "Gitti"}, relativeDirectory: {eq: "personal"}, extension: {eq: "jpg"}) {
+            base
+            childImageSharp {
+                gatsbyImageData(
+                    width: 320
+                    layout: CONSTRAINED
+                    quality: 85)      
             }
         }
       }`)
 
     return (
         <Layout>
-            <SEO title="Über uns" />
-            <StyledDocx htmlContent={data.Nina01_doc.content} />
-            <table style={{ width: "100%" }}>
-                <tbody>
-                <tr>
-                    <td >
-                        <ImageWithTitle fluid={data.img_nina.childImageSharp.fluid} alt={data.img_nina.base.split(".")[0]} text="Nina Scheidler" />
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            <StyledDocx htmlContent={data.Nina02_doc.content} />
+            <ImageWithTitle image={data.img_charlotte.childImageSharp.gatsbyImageData} alt={data.img_charlotte.base.split(".")[0]} text="Charlotte Haffert" />
+            <StyledDocx htmlContent={data.Charlotte_doc.content} />
             <hr></hr>
-            <StyledDocx htmlContent={data.Kathi01_doc.content} />
-            <table style={{ width: "100%" }}>
-                <tbody>
-                <tr>
-                    <td >
-                        <ImageWithTitle fluid={data.img_kathi.childImageSharp.fluid} alt={data.img_kathi.base.split(".")[0]} text="Katharina Harrer" />
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            <StyledDocx htmlContent={data.Kathi02_doc.content} />
+            <ImageWithTitle image={data.img_emily.childImageSharp.gatsbyImageData} alt={data.img_emily.base.split(".")[0]} text="Emily Hutzler" />
+            <StyledDocx htmlContent={data.Emily_doc.content} />
             <hr></hr>
+            <ImageWithTitle image={data.img_sabine.childImageSharp.gatsbyImageData} alt={data.img_sabine.base.split(".")[0]} text="Sabine Jäschke" />
+            <StyledDocx htmlContent={data.Sabine01_doc.content} />
+            <hr></hr>
+            <ImageWithTitle image={data.img_gitti.childImageSharp.gatsbyImageData} alt={data.img_gitti.base.split(".")[0]} text="Brigitte Harrer" />
+            <StyledDocx htmlContent={data.Gitti_doc.content} />
+            <hr></hr>
+            <ImageWithTitle image={data.img_annalena.childImageSharp.gatsbyImageData} alt={data.img_annalena.base.split(".")[0]} text="Annalena Hofmann" />
             <StyledDocx htmlContent={data.Annalena01_doc.content} />
-            <table style={{ width: "100%" }}>
-                <tbody>
-                <tr>
-                    <td >
-                        <ImageWithTitle fluid={data.img_annalena.childImageSharp.fluid} alt={data.img_annalena.base.split(".")[0]} text="Annalena Hofmann" />
-                    </td>
-                </tr>
-                </tbody>
-            </table>
             <StyledDocx htmlContent={data.Annalena02_doc.content} />
+            <hr></hr>
             <StyledDocx htmlContent={data.ueberunsdoc.content} />
         </Layout>
     )
 }
 
 export default UeberUns
+
+export const Head = () => (
+    <Seo title="Über uns" />
+  )

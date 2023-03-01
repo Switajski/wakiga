@@ -105,7 +105,7 @@ const Footer = ({ address }) => {
             <Logo src={logo} alt="Waldkindergarten Wiesenttal e.V."/>
           </a>
         </LogoContainer>
-        <RightColumnPackage EmailIcon={EmailIcon} />
+        <RightColumnPackage EmailIcon={EmailIcon} /> 
       </FooterContainer>
     </StyledFooter>
   )

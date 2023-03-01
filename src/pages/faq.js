@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { Seo } from "../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import { StyledDocx } from "../components/StyledComponents/styleddocx"
 
@@ -15,9 +15,13 @@ const FAQ = () => {
   
   return(
     <Layout>
-      <SEO title="FAQ" />
+      <Seo title="FAQ" />
       <StyledDocx htmlContent={data.faq.content} />
     </Layout>
   )}
   
   export default FAQ
+
+  export const Head = () => (
+    <Seo title="FAQ" />
+  )

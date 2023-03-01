@@ -1,44 +1,49 @@
 import React from "react"
 import styled from "styled-components"
-import BackgroundImage from "gatsby-background-image"
 import { Link } from "gatsby"
 import NavDesktop from "./nav-desktop"
 import NavMobile from "./nav-mobile"
-import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const StyledHeader = styled.header`
     background: RGB(197, 224, 180);
     margin-bottom: 1.45rem;
     height: 25em;
-
 `
 const HeaderContainer = styled.div`
     width: 100%;
-    height: 100%;
-    display: relative;
+    height: 85%;
+    display: grid;
 `
-const StyledBackgroundImage = styled(BackgroundImage)`
-    background-size: cover;
-    height: 85%; 
+const StyledBackgroundImage = styled(GatsbyImage)`
+    grid-area: 1/1;
+    object-fit: cover;
 `
-const HeadLineContainer = styled.div`
+const StyledLogo = styled(GatsbyImage)`
+    grid-area: 1/1;
+    width: 360px;
+    height: 340px;
+`
+const LogoWithLinkContainer = styled.div`
     margin: 0;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     height: 100%;
+    grid-area: 1/1;
+    position: relative;
+    place-items: center;
 `
 const HomeLink = styled(Link)`
     color: white;
     text-decoration: none;
     font-family: 'Chelsea Market', cursive;
 `
-const HomeImage = styled.div`
+const LogoContainer = styled.div`
     &:hover { transform: scale(1.1);
 `
 const BarContainer = styled.div`
     margin: 0 auto;
-    max-width: 60;
     padding: 0.8rem 1.0875rem;
     display: flex;
     flex-wrap: wrap;
@@ -55,25 +60,26 @@ const NavigationContainer = styled.div`
 `
 
 const HeadLinePackage = (props) => (
-    <StyledBackgroundImage fluid={props.fluid}>
-        <HeadLineContainer>
+    <HeaderContainer>
+        <StyledBackgroundImage image={props.image} alt="" />
+        <LogoWithLinkContainer>
             <HomeLink to="/">
-                <HomeImage>
-                    <StaticImage src="../../../images/Waldkindergarten_Logo.png" alt="Waldkindergarten Mäusewiese" placeholder="blurred" layout="fixed" width={437} height={350} />
-                </HomeImage>
+                <LogoContainer>
+                    <StyledLogo image={props.logo} alt="Waldkindergarten Mäusewiese Plankenfels" />
+                </LogoContainer>
             </HomeLink>
-        </HeadLineContainer>  
-    </StyledBackgroundImage>
+        </LogoWithLinkContainer>  
+    </HeaderContainer>
 )
 
 const BarPackage = (props) => (
     <BarContainer>
-        {(props.isBig || props.isMiddle) && 
+        {props.isBig && 
         <NavigationContainer>
             <NavDesktop links={props.links} />
         </NavigationContainer> 
         }
-        {props.isSmall && 
+        {!props.isBig && 
         <NavigationContainer>
             <NavMobile links={props.links} />
         </NavigationContainer>
@@ -81,4 +87,4 @@ const BarPackage = (props) => (
     </BarContainer>
 )
 
-export { StyledHeader, HeaderContainer, HeadLinePackage, BarPackage }
+export { HeadLinePackage, BarPackage, StyledHeader }

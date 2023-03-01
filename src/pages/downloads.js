@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { Seo } from "../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import { FaFileDownload, FaExternalLinkAlt } from 'react-icons/fa';
 import styled from "styled-components"
@@ -45,9 +45,6 @@ const Downloads = () => {
     konzept: file(relativePath: { eq: "Konzeption Wakiga Plankenfels.pdf" }) {
       publicURL
     }
-    hygienekonzept: file(relativePath: { eq: "Schutz.pdf" }) {
-      publicURL
-    }
     kontaktdaten: file(relativePath: { eq: "Kontaktdaten.pdf" }) {
       publicURL
     }
@@ -55,12 +52,6 @@ const Downloads = () => {
 `)
 
 return (<Layout>
-    <SEO title="Downloads" />
-    <h3>Hygiene-Konzept für den Tag der offenen Tür</h3>
-    <p>Hygiene-Konzept für den Tag der offenen Tür am 17.10.2020. Hier könnt Ihr das Hygiene-Konzept als PDF herunterladen:</p>
-    <IconContainer>
-      <FileDownloadWithInfo publicURL={data.hygienekonzept.publicURL} title="Hygiene-Konzept (PDF) herunterladen" />
-    </IconContainer>
     <h3>Unser pädagogisches Konzept</h3>
     <p>Unser pädagogisches Konzept verdeutlicht unsere Ziele und soll unseren Schwerpunkt in der Pädagogik sichtbar machen. Hier könnt Ihr das Konzept als PDF herunterladen:</p>
     <IconContainer>
@@ -73,4 +64,9 @@ return (<Layout>
     </IconContainer>
   </Layout>
 )}
+
 export default Downloads
+
+export const Head = () => (
+  <Seo title="Downloads" />
+)

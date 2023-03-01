@@ -7,8 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 import Header from "./Header/header"
 import Footer from "./footer"
 import "./layout.css"
@@ -24,21 +23,11 @@ const StyledMain = styled.main`
 `
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-          address
-        }
-      }
-    }
-  `)
-
+  const { title, address } = useSiteMetadata()
   return (
     <>
       <Header
-        siteTitle={data.site.siteMetadata.title}
+        siteTitle={title}
         links={[
           { url: "/anfahrt/", name: "Kontakt & Anfahrt", key: "1" },
           { url: "/termine/", name: "Termine", key: "2" },
@@ -50,7 +39,7 @@ const Layout = ({ children }) => {
         ]} />
       <StyledMainContainer>
         <StyledMain>{children}</StyledMain>
-        <Footer address={data.site.siteMetadata.address} />
+        <Footer address={address} />
       </StyledMainContainer>
     </>
   )

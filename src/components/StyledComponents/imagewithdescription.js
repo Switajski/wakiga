@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const Container = styled.table`
     width: 100%;
@@ -26,25 +26,29 @@ const ImageWithDescriptionLeft = props => (
             <tr>
                 <Description width={props.descriptionWidth}>{props.description}</Description>
                 <ImageForDescription>
-                    <Img fluid={props.fluid}/>
+                    <GatsbyImage image={props.image}/>
                 </ImageForDescription>
             </tr>
         </tbody>
     </Container>
 )
 
-const TitledImage = styled(Img)`
-    max-width: 320px;
+const CenteredContainer = styled.div`
     margin: 0 auto;
+    width: 100%;
+    display: block;
+`
+const TitledImage = styled(GatsbyImage)`
+    max-width: 320px;
 `
 const CenteredTitle = styled.div`
     text-align: center;
 `
 const ImageWithTitle = (props) => (
-    <>
-        <TitledImage fluid={props.fluid} alt={props.alt} />
+    <CenteredContainer>
+        <TitledImage image={props.image} alt={props.alt} style={{ display: "block", margin: "0 auto" }} />
         <CenteredTitle><p>{props.text}</p></CenteredTitle>
-    </>
+    </CenteredContainer>
 )
 
 export { ImageWithDescriptionLeft, ImageWithTitle }

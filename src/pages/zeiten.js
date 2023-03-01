@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { Seo } from "../components/seo"
 import { StyledDocx } from "../components/StyledComponents/styleddocx"
 
 const Zeiten = () => {
@@ -14,10 +14,13 @@ const Zeiten = () => {
 
     return (
         <Layout>
-            <SEO title="Zeiten &amp; Sonstiges" />
             <StyledDocx htmlContent={data.zeitendoc.content} />
         </Layout>
     )
 }
 
 export default Zeiten
+
+export const Head = () => (
+  <Seo title="Zeiten &amp; Beiträge" />
+)

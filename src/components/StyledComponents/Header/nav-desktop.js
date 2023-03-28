@@ -16,7 +16,7 @@ const StyledLink = styled(Link)`
 
   &:hover {
     background-color: white;
-    transition: background-color 1.0s;
+    transition: background-color 0.3s;
     border-radius: 10px;
   }
 `

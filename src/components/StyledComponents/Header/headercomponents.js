@@ -20,27 +20,35 @@ const StyledBackgroundImage = styled(GatsbyImage)`
     object-fit: cover;
 `
 const StyledLogo = styled(GatsbyImage)`
-    grid-area: 1/1;
-    width: 360px;
-    height: 340px;
+    width: 339px;
+    height: 320px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2; 
+`
+const LogoContainer = styled.div`
+    position: relative;
+    z-index: 1;
+    &:hover {transform: scale(1.03)};
 `
 const LogoWithLinkContainer = styled.div`
     margin: 0;
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     grid-area: 1/1;
     position: relative;
-    place-items: center;
+    
 `
 const HomeLink = styled(Link)`
     color: white;
     text-decoration: none;
     font-family: 'Chelsea Market', cursive;
-`
-const LogoContainer = styled.div`
-    &:hover { transform: scale(1.1);
 `
 const BarContainer = styled.div`
     margin: 0 auto;
@@ -58,6 +66,19 @@ const NavigationContainer = styled.div`
     align-items: center;
     width: 100%;
 `
+const BackgroundRectangle = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    border-width: 4px;
+    border-style: groove;
+    border-color: rgba(197, 224, 180, 0.65);
+    background-color: rgba(255, 255, 255, 0.65);
+    z-index: 0;
+`
 
 const HeadLinePackage = (props) => (
     <HeaderContainer>
@@ -66,23 +87,24 @@ const HeadLinePackage = (props) => (
             <HomeLink to="/">
                 <LogoContainer>
                     <StyledLogo image={props.logo} alt="Waldkindergarten Mäusewiese Plankenfels" />
+                    <BackgroundRectangle />
                 </LogoContainer>
             </HomeLink>
-        </LogoWithLinkContainer>  
+        </LogoWithLinkContainer>
     </HeaderContainer>
 )
 
 const BarPackage = (props) => (
     <BarContainer>
-        {props.isBig && 
-        <NavigationContainer>
-            <NavDesktop links={props.links} />
-        </NavigationContainer> 
+        {props.isBig &&
+            <NavigationContainer>
+                <NavDesktop links={props.links} />
+            </NavigationContainer>
         }
-        {!props.isBig && 
-        <NavigationContainer>
-            <NavMobile links={props.links} />
-        </NavigationContainer>
+        {!props.isBig &&
+            <NavigationContainer>
+                <NavMobile links={props.links} />
+            </NavigationContainer>
         }
     </BarContainer>
 )

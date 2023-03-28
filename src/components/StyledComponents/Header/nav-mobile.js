@@ -32,79 +32,85 @@ const NavElement = styled.p`
   text-align: center;
   background-color:  rgba(197, 224, 180, 1.0);
   margin-bottom: 0;
- /* &:first-child { 
-    border-top: 2px;
-    border-left: 2px;
-    border-right: 2px;
-    border-bottom: 2px;
-    border-style: solid;
+  transition: 0.3s;
+  &:hover { 
+    background-color:  white;
   }
-  &:last-child {
-    border-top: 0px;
-    border-left: 2px;
-    border-right: 2px;
-    border-bottom: 2px;
-    border-style: solid;
-  }
-  &:not(:first-child):not(:last-child) {
-    border-top: 0px;
-    border-left: 2px;
-    border-right: 2px;
-    border-bottom: 2px;
-    border-style: solid;
-  }*/
 `
 const NavigationBar = styled.nav`
-  margin-top: 7.5%;
   z-index: 999;
   position: sticky;
 `
 const NavigationContainer = styled.div`
   text-align: center;
   width: 12rem;
+  z-index: 998;
+`
+const NavigationWrapper = styled.div`
+  border: none;
+
+  ${({ showBorder }) =>
+      showBorder &&
+      `
+      border-top: 1px solid RGB(60, 93, 38);
+      border-left: 1px solid RGB(60, 93, 38);
+      border-right: 1px solid RGB(60, 93, 38);
+      border-bottom: 1px solid RGB(60, 93, 38);
+      border-radius: 20px;
+      margin-top: -10px;
+      padding: 10px;
+      background-color: rgba(197, 224, 180, 1.0);
+      `}
 `
 const StyledLink = styled(Link)`
   color: RGB(60, 93, 38);
   text-decoration: none;
   font-family: 'Chelsea Market', cursive;
+
   &:first-child > p { 
-    border-top: 2px;
-    border-left: 2px;
-    border-right: 2px;
-    border-bottom: 2px;
+    border-top: 1px;
+    border-left: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
     border-style: solid;
   }
   &:last-child > p {
-    border-top: 0px;
-    border-left: 2px;
-    border-right: 2px;
-    border-bottom: 2px;
+    border-top: 1px;
+    border-left: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
     border-style: solid;
+    margin-top: 2px;
+    margin-bottom: 7px;
   }
   &:not(:first-child):not(:last-child) > p {
-    border-top: 0px;
-    border-left: 2px;
-    border-right: 2px;
-    border-bottom: 2px;
+    border-top: 1px;
+    border-left: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
     border-style: solid;
+    margin-top: 2px;
   }
 `
 const NavMobile = ({ links }) => {
   const [open, setOpen] = useState(false)
   const toggle = () => setOpen(!open)
+  const showBorder = open
 
   return (
     <NavigationContainer>
-      <MobileButton open={open} onClick={toggle}/>
-      {open && (
-        <NavigationBar>
-          {links.map(link => (
-            <StyledLink to={link.url} key={link.name} >
-              <NavElement>{link.name}</NavElement>
-            </StyledLink>
-          ))}
-        </NavigationBar>
-      )}
+      <NavigationWrapper showBorder={showBorder}>
+        <MobileButton open={open} onClick={toggle}/>
+        {open && (
+          <NavigationBar>
+            {links.map(link => (
+              <StyledLink to={link.url} key={link.name} >
+                <NavElement>{link.name}</NavElement>
+              </StyledLink>
+            ))}
+          </NavigationBar>
+        )}
+      </NavigationWrapper>
     </NavigationContainer>
   )
 }

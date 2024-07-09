@@ -8,7 +8,7 @@ import { getImage } from "gatsby-plugin-image"
 const Header = ({ links = [] }) => {
   const data = useStaticQuery(graphql`
   query {
-    desktopBackgroundImage: file(relativePath: { eq: "MenuBackground_big.jpg" }) {
+    desktopBackgroundImage: file(relativePath: { eq: "P_20240513_091842_new.jpg" }) {
       childImageSharp {
         gatsbyImageData(
           placeholder: BLURRED

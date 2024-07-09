@@ -85,7 +85,7 @@ const Bilder = () => {
           <StyledImageContainer key={image.node.base}>
               <StyledImage image={image.node.childImageSharp.gatsbyImageData}
                   alt={image.node.base.split(".")[0]} />
-              <br />
+              <p></p>
           </StyledImageContainer>
       ))}
       <p></p>
@@ -94,7 +94,7 @@ const Bilder = () => {
           <StyledImageContainer key={image.node.base}>
               <StyledImage image={image.node.childImageSharp.gatsbyImageData}
                   alt={image.node.base.split(".")[0]} />
-              <br />
+              <p></p>
           </StyledImageContainer>
       ))}
       <p></p>
@@ -112,7 +112,7 @@ const Bilder = () => {
           <StyledImageContainer key={image.node.base}>
               <StyledImage image={image.node.childImageSharp.gatsbyImageData}
                   alt={image.node.base.split(".")[0]} />
-              <br />
+              <p></p>
           </StyledImageContainer>
       ))}
     </Layout>

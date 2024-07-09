@@ -14,9 +14,6 @@ const UeberUns = () => {
         Charlotte_doc: docx(name: {eq: "Charlotte"}) {
             content
         }
-        Emily_doc: docx(name: {eq: "Emily"}) {
-            content
-        }
         Annalena01_doc: docx(name: {eq: "Annalena01"}) {
             content
         }
@@ -39,15 +36,6 @@ const UeberUns = () => {
             }
         }
         img_charlotte: file(name: {eq: "Charlotte"}, relativeDirectory: {eq: "personal"}, extension: {eq: "jpg"}) {
-            base
-            childImageSharp {
-                gatsbyImageData(
-                    width: 320
-                    layout: CONSTRAINED
-                    quality: 85)  
-            }
-        }
-        img_emily: file(name: {eq: "Emily"}, relativeDirectory: {eq: "personal"}, extension: {eq: "jpg"}) {
             base
             childImageSharp {
                 gatsbyImageData(
@@ -80,9 +68,6 @@ const UeberUns = () => {
         <Layout>
             <ImageWithTitle image={data.img_charlotte.childImageSharp.gatsbyImageData} alt={data.img_charlotte.base.split(".")[0]} text="Charlotte Haffert" />
             <StyledDocx htmlContent={data.Charlotte_doc.content} />
-            <hr></hr>
-            <ImageWithTitle image={data.img_emily.childImageSharp.gatsbyImageData} alt={data.img_emily.base.split(".")[0]} text="Emily Hutzler" />
-            <StyledDocx htmlContent={data.Emily_doc.content} />
             <hr></hr>
             <ImageWithTitle image={data.img_sabine.childImageSharp.gatsbyImageData} alt={data.img_sabine.base.split(".")[0]} text="Sabine Jäschke" />
             <StyledDocx htmlContent={data.Sabine01_doc.content} />

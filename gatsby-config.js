@@ -10,7 +10,7 @@ module.exports =
     image: "/images/Waldkindergarten_Logo.png",
     author: `Michael Werner`,
     address: `Waldkindergarten Wiesenttal e.V.
-    Schauertal 25
+    Muschelquellenweg 11
     91346 Wiesenttal/Streitberg`,
     facebookUsername: "waldkiga.plankenfels"
   },

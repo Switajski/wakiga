@@ -42,7 +42,7 @@ const ExtLinkWithInfo = (props) => (
 const Downloads = () => {
   const data = useStaticQuery(graphql`
   query {
-    konzept: file(relativePath: { eq: "Konzeption Wakiga Plankenfels.pdf" }) {
+    konzept: file(relativePath: { eq: "Konzeption Waldkiga Plankenfels.pdf" }) {
       publicURL
     }
     kontaktdaten: file(relativePath: { eq: "Kontaktdaten.pdf" }) {
